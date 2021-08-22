@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <body>
+      <h1>Change Name</h1>
+      <label for="">Data number</label>
+      <select name="Data number" id="number">
+        <option selected disabled value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select> <br>
+      <label for="">Input Name</label>
+      <input placeholder="Character Max = 20" type="text" id="name" maxlength="20">
+      <button onclick="gantiValue()" >Click Me</button>
+      <h5 id="info"></h5>
+    <script>
+        let Profile = [
+    {
+        nama:"Aaran",
+        usia:20,
+        gender:"Male"
+    },
+    {
+        nama:"Ryn",
+        usia:22,
+        gender:"Male"
+    },
+    {
+        nama:"Cia",
+        usia:19,
+        gender:"Female"
+    },
+    {
+        nama:"Max",
+        usia:30,
+        gender:"Male"
+    },
+    {
+        nama:"Rhiita",
+        usia:25,
+        gender:"Female"
+    },
+    {
+        nama:"Sanzu",
+        usia:17,
+        gender:"Female"
+    },
+  ]
+
+    function gantiValue(){
+      let newName = document.getElementById('name').value
+      let number = document.getElementById('number').value
+      for(let i = 0 ; i < Profile.length;i++){
+        if(number == i){
+          Profile[number].nama = newName
+        }
+      }
+      console.log(Profile)
+      document.getElementById('info').innerHTML = `Nama pada index ke ${number} telah diubah menjadi: ${newName} ,
+      gunakan console untuk melihat data`
+    }
+
+    </script>
+  </body>
+</html>
